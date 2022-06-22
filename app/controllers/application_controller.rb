@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
   end 
 
   get "/users" do
-    users = User.all.to_json
+    users = User.all.to_json(:include => [:emoji, :drink])
   end 
 
   get "/users/:id" do
