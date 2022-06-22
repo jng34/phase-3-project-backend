@@ -17,5 +17,10 @@ class ApplicationController < Sinatra::Base
     user.to_json
   end
 
+  get "/emojis" do 
+    emojis = Emoji.all
+    emojis.to_json
+  end
+
 
 end
