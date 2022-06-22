@@ -8,13 +8,12 @@ class ApplicationController < Sinatra::Base
   end 
 
   get "/users" do
-    users = User.all
-    users.to_json
+    users = User.all.to_json
   end 
 
   get "/users/:id" do
     user = User.find(params[:id])
-    user.to_json
+    user.to_json(include: :emoji)
   end
 
   get "/emojis" do 
@@ -22,5 +21,20 @@ class ApplicationController < Sinatra::Base
     emojis.to_json
   end
 
+  post "/users" do
+    user = User.create(
+      username: params[:username],
+      image: params[:image],
+      emoji_id: params[:emoji_id],
+      drink_id: params[:drink_id]
+    )
+    user.to_json
+  end
+
+  delete "/users/:id" do
+    user = User.find(params[:id]).destroy
+    user.to_json
+  end
+  
 
 end
