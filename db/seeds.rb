@@ -58,5 +58,24 @@ Drink.create(name: "Smashed Watermelon Margarita", image: "https://www.thecockta
 
 
 # Emoji Seeds
+# emojis = [
+#     https://i.ibb.co/bvX1Fjv/Smirk-Face-Emoji.png
+#     https://i.ibb.co/Twm2CZG/Sleeping-Emoji.png
+#     https://i.ibb.co/YyQmnNr/Heart-Eyes-Emoji.png
+#     https://i.ibb.co/qrcfs3b/Very-Angry-Emoji.png
+#     https://i.ibb.co/NSj6rpz/Poop-Emoji.png
+#     https://i.ibb.co/sHcLjVv/Happy-Emoji.png
+#     https://i.ibb.co/LYYQkRK/Party-Face-Emoji.png
+#     https://i.ibb.co/wYfvzks/Very-Sad-Emoji.png
+# ]
+
+Emoji.create(feeling: 'smirky', icon: "https://i.ibb.co/bvX1Fjv/Smirk-Face-Emoji.png")
+Emoji.create(feeling: 'sleepy', icon: "https://i.ibb.co/Twm2CZG/Sleeping-Emoji.png")
+Emoji.create(feeling: 'hearty', icon: "https://i.ibb.co/YyQmnNr/Heart-Eyes-Emoji.png")
+Emoji.create(feeling: 'angry', icon: "https://i.ibb.co/qrcfs3b/Very-Angry-Emoji.png")
+Emoji.create(feeling: 'poopy', icon: "https://i.ibb.co/NSj6rpz/Poop-Emoji.png")
+Emoji.create(feeling: 'happy', icon: "https://i.ibb.co/sHcLjVv/Happy-Emoji.png")
+Emoji.create(feeling: 'party', icon: "https://i.ibb.co/LYYQkRK/Party-Face-Emoji.png")
+Emoji.create(feeling: 'sad', icon: "https://i.ibb.co/wYfvzks/Very-Sad-Emoji.png" )
 
 puts "✅ Done seeding!"
