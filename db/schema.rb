@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2022_06_21_175826) do
   create_table "drinks", force: :cascade do |t|
     t.string "name"
     t.string "image"
+    t.string "type"
   end
 
   create_table "emojis", force: :cascade do |t|
