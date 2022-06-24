@@ -13,7 +13,24 @@ class ApplicationController < Sinatra::Base
 
   get "/users/:id" do
     user = User.find(params[:id])
+    # user.to_json(include: :emoji)
+    user.to_json(:include => [:emoji, :drink])
+  end
+
+  patch "/users/emoji/:id" do
+    user = User.find(params[:id])
+    user.update(
+      emoji_id: params[:emoji_id]
+    )
     user.to_json(include: :emoji)
+  end
+
+  patch "/users/drink/:id" do
+    user = User.find(params[:id])
+    user.update(
+      drink_id: params[:drink_id]
+    )
+    user.to_json(include: :drink)
   end
 
   get "/emojis" do 
@@ -28,7 +45,8 @@ class ApplicationController < Sinatra::Base
       emoji_id: params[:emoji_id],
       drink_id: params[:drink_id]
     )
-    user.to_json
+    user.to_json(:include => [:emoji, :drink])
+    # user.to_json
   end
 
   delete "/users/:id" do
