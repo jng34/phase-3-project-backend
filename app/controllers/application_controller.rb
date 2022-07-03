@@ -5,6 +5,11 @@ class ApplicationController < Sinatra::Base
   get "/drinks" do
     drinks = Drink.all
     drinks.to_json
+  end
+
+  get "/drinks/:id" do
+    drink = Drink.find(params[:id])
+    drink.to_json
   end 
 
   get "/users" do
@@ -36,6 +41,11 @@ class ApplicationController < Sinatra::Base
   get "/emojis" do 
     emojis = Emoji.all
     emojis.to_json
+  end
+
+  get "/emojis/:id" do 
+    emoji = Emoji.find(params[:id])
+    emoji.to_json
   end
 
   post "/users" do
